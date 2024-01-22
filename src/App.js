@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import{BrowserRouter, NavLink} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
+import Home from './Components-routes/Home';
+import Login from './Components-routes/Login';
+import Register from './Components-routes/Register';
+import Dashboard from './Components-routes/Dashboard';
 
 function App() {
+  const nav={
+   textDecoration:"none",
+   color:"black"
+   }
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<BrowserRouter>
+<div className='Navbar'>
+
+ <NavLink to='/Home' style={nav}>Home</NavLink>
+<NavLink to='/register' style={nav}>Register</NavLink>
+<NavLink to='/login' style={nav}>Login</NavLink>
+<NavLink to='/dashboard' style={nav}>Dashboard</NavLink>
+</div>
+<div className='body'>
+    
+    <Routes>
+        <Route path='/Home' element={<Home/>} />
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+    </Routes>
     </div>
+</BrowserRouter>
+
+    </div>
+    
+    </>
   );
 }
 
