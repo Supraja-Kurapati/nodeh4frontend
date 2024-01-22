@@ -19,7 +19,7 @@ else{
 // alert(response.msg)
 // setWel(response.msg)
 //   })
-axios.get('http://localhost/5050/pages/dashboard', {
+axios.get('https://nhfour.onrender.com/pages/dashboard', {
   headers: {
     Authorization: `Bearer ${token}`
   }

@@ -11,7 +11,7 @@ const Register = () => {
 
   const handleregister=()=>{
     try{
-      const response=axios.post('http://localhost:5050/pages/register',{email,password})
+      const response=axios.post('https://nhfour.onrender.com/pages/register',{email,password})
       .then((res)=>{
         console.log(res.data,"User Registered Data")
         if(res.data.msg==="email Already exist"){
