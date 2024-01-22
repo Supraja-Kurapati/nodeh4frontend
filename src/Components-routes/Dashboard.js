@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 const Dashboard = () => {
   const navigate=useNavigate()
-  const [wel,setWel]=useState('')
   useEffect(()=>{
   const token=localStorage.getItem('token')
   console.log(token)
